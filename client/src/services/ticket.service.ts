@@ -5,34 +5,34 @@ import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
 const DOMAIN = "http://localhost:3000";
-const PATH = "/bartender";
+const PATH = "/ticket";
 const BASEURL = `${DOMAIN}${PATH}`;
 
 
 @Injectable()
-export class BartenderService {
+export class TicketService {
   constructor(private http: Http) {}
 
-  bartenderList():Observable<any>{
+  ticketList():Observable<any>{
       return this.http.get(BASEURL)
                       .map(res => res.json());
   }
 
-  bartenderByID(id):Observable<any>{
+  ticketByID(id):Observable<any>{
       return this.http.get(`${BASEURL}/${id}`)
                       .map(res => res.json());
   }
 
-  createBartender(e):Observable<any>{
+  createTicket(e):Observable<any>{
       return this.http.post(BASEURL, e)
                       .map(res => res.json());
   }
 
-  editBartender(e):Observable<any>{
+  editTicket(e):Observable<any>{
       return this.http.post(BASEURL, e)
                       .map(res => res.json());
   }
-  deleteBartender(id){
+  deleteTicket(id){
       return this.http.delete(`${BASEURL}/${id}`)
                       .map(res => res.json());
   }
