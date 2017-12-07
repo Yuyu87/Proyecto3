@@ -7,10 +7,15 @@ const logger = require('morgan');
 const passport   = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
+const debug = require('debug')("cocktails_at_home:"+path.basename(__filename).split('.')[0]);
 const authRoutes = require('./routes/auth');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const userController = require('./routes/userController');
+const ticketController = require('./routes/ticketController');
+const serviceBartenderController = require('./routes/serviceBartenderController');
+const reviewController = require('./routes/reviewController');
+const bartenderController = require('./routes/bartenderController');
 
 const app = express();
 
@@ -42,7 +47,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'angular auth passport secret shh',
+  secret: 'angular auth passport secret shh', /*cambiar*/
   resave: true,
   saveUninitialized: true,
   cookie : { httpOnly: true, maxAge: 60*60*24*365 },
@@ -55,6 +60,11 @@ app.use(passport.session());
 
 
 app.use('/auth', authRoutes);
+app.use('/user', userController);
+app.use('/ticket', ticketController);
+app.use('/serviceBartender', serviceBartenderController);
+app.use('/review', reviewController);
+app.use('/bartender', bartenderController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const bartenderSchema = new Schema(
-
-  {username: { type: String, required: true},
-  lastname: { type: String, required: true},
-  email: { type: String, required: true},
-  password: { type: String, required: true},
-  city: { type: String, required: true},
-  style: { type: String, required: true},
-  description: { type: String, required: true},
-  giftCards: []
-
+const bartenderSchema = new Schema({
+  username: { type: String},
+  lastname: { type: String},
+  email: { type: String},
+  password: { type: String},
+  city: { type: String},
+  style: { type: String},
+  description: { type: String}
   /*imageUrl: { type: String},*/
 }, {
   timestamps: {
