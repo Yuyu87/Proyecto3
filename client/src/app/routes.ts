@@ -12,5 +12,6 @@ export const routes: Routes = [
     { path: 'user',  component: UserprofileComponent,canActivate: [ IsLoggedInService ]  },
     { path: 'login',  component: LoginformComponent,  },
     { path: 'signup',  component: SignupformComponent,  },
+    { path: 'btprofile',  component: SignupformComponent,  },
     { path: '**', redirectTo: '' }
 ];

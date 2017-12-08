@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import {routes} from './routes';
 import { SignupformComponent } from './signupform/signupform.component';
+import { BtprofileComponent } from './btprofile/btprofile.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SignupformComponent } from './signupform/signupform.component';
     LoginformComponent,
     HomeComponent,
     UserprofileComponent,
-    SignupformComponent
+    SignupformComponent,
+    BtprofileComponent,
+
   ],
   imports: [
     BrowserModule,
