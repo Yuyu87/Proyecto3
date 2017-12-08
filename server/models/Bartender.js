@@ -9,7 +9,8 @@ const bartenderSchema = new Schema({
   city: { type: String},
   style: { type: String},
   description: { type: String}
-  /*imageUrl: { type: String},*/
+  // ,
+  // imageUrl: { type: String}
 }, {
   timestamps: {
     createdAt: 'created_at',

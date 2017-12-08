@@ -14,7 +14,7 @@ export class BartenderService {
   constructor(private http: Http) {}
 
   bartenderList():Observable<any>{
-      return this.http.get(BASEURL)
+      return this.http.get(BASEURL+'/bartenders')
                       .map(res => res.json());
   }
 

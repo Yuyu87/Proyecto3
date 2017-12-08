@@ -28,7 +28,8 @@ router.post('/bartenders',function(req, res) {
     city: req.body.city,
     style: req.body.style,
     description: req.body.description
-
+    // ,
+    // imageUrl:req.body.imageUrl
   });
 
   bartender.save()
@@ -38,7 +39,7 @@ router.post('/bartenders',function(req, res) {
 
 /* EDIT a bartender. */
 router.post('/bartenders/:id',(req, res) => {
-  const {username, lastname, email, password, city, style, description } = req.body;
+  const {username, lastname, email, password, city, style, description /*,imageUrl*/ } = req.body;
   const updates = {username, lastname, email, password, city, style, description};
 
   Bartender.findByIdAndUpdate(req.params.id, updates, {new:true})
