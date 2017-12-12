@@ -18,8 +18,8 @@ import { EditbtprofileComponent } from './editbtprofile/editbtprofile.component'
 import { MybtprofileComponent } from './mybtprofile/mybtprofile.component';
 
 import { AuthService } from './services/auth.service';
-import { BartenderService } from './services/bartender.service';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
+import { RecipeService } from './services/recipe.service';
 import { ReviewService } from './services/review.service';
 import { ServiceBartenderService } from './services/serviceBartender.service';
 import { TicketService } from './services/ticket.service';
@@ -52,7 +52,7 @@ import { UserService } from './services/user.service';
   providers: [
     AuthService,
     IsLoggedInService,
-    BartenderService,
+    RecipeService,
     ReviewService,
     ServiceBartenderService,
     TicketService,

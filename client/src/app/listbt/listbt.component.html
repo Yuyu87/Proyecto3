@@ -5,12 +5,11 @@
 <ul>
     <li *ngFor="let result of listbt, let i = index">
         <ul>{{ i }} - {{ result.username }}</ul>
-        <ul>{{ i }} - {{ result.lastname }}</ul>
         <ul>{{ i }} - {{ result.email }}</ul>
         <ul>{{ i }} - {{ result.city }}</ul>
         <ul>{{ i }} - {{ result.style }}</ul>
         <ul>{{ i }} - {{ result.description }}</ul>
-        <button><a [routerLink]="['/btprofile']">Bartender Profile</a></button>
+        <button><a [routerLink]="['/btprofile',result._id]">Bartender Profile</a></button>
     </li>
 
 </ul>

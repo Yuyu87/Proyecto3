@@ -17,9 +17,15 @@ export class UserService {
       return this.http.get(BASEURL)
                       .map(res => res.json());
   }
+/*preguntar si está ok*/
+  userBartenderList():Observable<any>{
+      return this.http.get(BASEURL+'/users/bartenders')
+                      .map(res => res.json());
+  }
+
 
   userByID(id):Observable<any>{
-      return this.http.get(`${BASEURL}/${id}`)
+      return this.http.get(`${BASEURL}/users/${id}`)
                       .map(res => res.json());
   }
 
@@ -27,13 +33,19 @@ export class UserService {
       return this.http.post(BASEURL, e)
                       .map(res => res.json());
   }
+/*preguntar si está ok*/
+  createUserBartender(e):Observable<any>{
+      return this.http.post(BASEURL+'/bartenders', e)
+                      .map(res => res.json());
+  }
 
+/*aquí creo que debería poner el id seguido de BASEURL: `${BASEURL}/${id}` */
   editUser(e):Observable<any>{
-      return this.http.post(BASEURL, e)
+      return this.http.post(BASEURL+'/users', e)
                       .map(res => res.json());
   }
   deleteUser(id){
-      return this.http.delete(`${BASEURL}/${id}`)
+      return this.http.delete(`${BASEURL}/users/${id}`)
                       .map(res => res.json());
   }
 

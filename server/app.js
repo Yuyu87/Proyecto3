@@ -15,7 +15,7 @@ const userController = require('./routes/userController');
 const ticketController = require('./routes/ticketController');
 const serviceBartenderController = require('./routes/serviceBartenderController');
 const reviewController = require('./routes/reviewController');
-const bartenderController = require('./routes/bartenderController');
+const recipeController = require('./routes/recipeController');
 
 const app = express();
 
@@ -64,7 +64,7 @@ app.use('/user', userController);
 app.use('/ticket', ticketController);
 app.use('/serviceBartender', serviceBartenderController);
 app.use('/review', reviewController);
-app.use('/bartender', bartenderController);
+app.use('/recipe', recipeController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

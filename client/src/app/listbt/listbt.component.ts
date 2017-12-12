@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BartenderService } from '../services/bartender.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-listbt',
@@ -8,10 +8,10 @@ import { BartenderService } from '../services/bartender.service';
 })
 export class ListbtComponent implements OnInit {
   listbt:any;
-  constructor(public bartenderService:BartenderService) { }
+  constructor(public userService:UserService) { }
 
   ngOnInit() {
-    this.bartenderService.bartenderList()
+    this.userService.userBartenderList()
       .subscribe( result => this.listbt = result);
   }
 

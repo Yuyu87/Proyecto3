@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'userprofile',  component: UserprofileComponent,canActivate: [ IsLoggedInService ]  },
     { path: 'login',  component: LoginformComponent,  },
     { path: 'signup',  component: SignupformComponent,  },
-    { path: 'btprofile',  component: BtprofileComponent,  },
+    { path: 'btprofile/:id',  component: BtprofileComponent,  },
     { path: 'editprofile',  component: EditprofileComponent,  },
     { path: 'listbt',  component: ListbtComponent,  },
     { path: 'editbtprofile',  component: EditbtprofileComponent,  },
