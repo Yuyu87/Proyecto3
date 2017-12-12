@@ -14,6 +14,8 @@ import { ListbtComponent } from './listbt/listbt.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { EditbtprofileComponent } from './editbtprofile/editbtprofile.component';
+import { MybtprofileComponent } from './mybtprofile/mybtprofile.component';
 
 import { AuthService } from './services/auth.service';
 import { BartenderService } from './services/bartender.service';
@@ -22,6 +24,7 @@ import { ReviewService } from './services/review.service';
 import { ServiceBartenderService } from './services/serviceBartender.service';
 import { TicketService } from './services/ticket.service';
 import { UserService } from './services/user.service';
+
 
 
 @NgModule({
@@ -35,6 +38,8 @@ import { UserService } from './services/user.service';
     EditprofileComponent,
     ListbtComponent,
     IndexComponent,
+    EditbtprofileComponent,
+    MybtprofileComponent,
   ],
 
   imports: [
@@ -43,7 +48,7 @@ import { UserService } from './services/user.service';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  
+
   providers: [
     AuthService,
     IsLoggedInService,

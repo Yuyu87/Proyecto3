@@ -8,4 +8,5 @@
   <pre> {{ user | json }} </pre>
 
   <button (click)="auth.logout().subscribe()"> logout </button>
+  <button><a [routerLink]="['/editprofile']">Edit my profile</a></button>
 </div>

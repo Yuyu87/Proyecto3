@@ -29,7 +29,7 @@ export class LoginformComponent implements OnInit {
     if(username != "" && password != ""){
       console.log(`Login with ${username} ${password}`)
       this.auth.login(username, password)
-      .subscribe(()=>this.router.navigate(['/userprofile']));
+      .subscribe(()=>this.router.navigate(['/']));
 
 
 //       export class MyAboutComponent implements OnInit {

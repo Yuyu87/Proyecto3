@@ -9,6 +9,8 @@ import {EditprofileComponent} from './editprofile/editprofile.component';
 import {ListbtComponent} from './listbt/listbt.component';
 import {IndexComponent} from './index/index.component';
 import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
+import {EditbtprofileComponent} from './editbtprofile/editbtprofile.component';
+import {MybtprofileComponent} from './mybtprofile/mybtprofile.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -18,6 +20,7 @@ export const routes: Routes = [
     { path: 'btprofile',  component: BtprofileComponent,  },
     { path: 'editprofile',  component: EditprofileComponent,  },
     { path: 'listbt',  component: ListbtComponent,  },
-    { path: 'index',  component: IndexComponent,  },
+    { path: 'editbtprofile',  component: EditbtprofileComponent,  },
+    { path: 'mybtprofile',  component: MybtprofileComponent,  },
     { path: '**', redirectTo: '' }
 ];

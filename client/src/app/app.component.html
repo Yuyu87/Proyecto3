@@ -1,13 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <ul>
-  <li><a [routerLink]="['/']">Home</a></li>
-  <li><a [routerLink]="['/login']">Login</a></li>
-  <li><a [routerLink]="['/signup']">Signup</a></li>
-  <li><a [routerLink]="['/btprofile']">Bartender Profile</a></li>
-  <li><a [routerLink]="['/userprofile']">User Profile</a></li>
-  <li><a [routerLink]="['/listbt']">Bartenders</a></li>
-
+  <button><a [routerLink]="['/']">Home</a></button>
+  <button><a [routerLink]="['/login']">Login</a></button>
+  <button><a [routerLink]="['/signup']">Signup</a></button>
+  <button><a [routerLink]="['/userprofile']">User Profile</a></button>
+  <button><a [routerLink]="['/listbt']">Bartenders</a></button>
+  <button><a [routerLink]="['/mybtprofile']">My bartender profile</a></button>
   </ul>
+
+  <button><a [routerLink]="['/listbt']">Ver más Bartenders!</a></button>
   <router-outlet></router-outlet>
 </div>
