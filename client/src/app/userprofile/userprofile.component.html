@@ -2,20 +2,20 @@
   <h2>NO USER LOGGED IN</h2>
 </div>
 
+<img class = "imageUser"src="{{user.img}}">
 <div *ngIf="user">
   <h2> You are now logged in as {{ user.username }}!! </h2>
-  <ul>{{ i }} - {{ user.username }}</ul>
-  <ul>{{ i }} - {{ user.email }}</ul>
+  <!-- <li>{{ i }} - {{ user.username }}</li> -->
+  <!-- <li>{{ i }} - {{ user.email }}</li> -->
 
-  <li *ngFor="let result of myrecipes, let i = index">
-      <ul>{{ i }} - {{ result.name }}</ul>
-      <ul>{{ i }} - {{ result.glass }}</ul>
-      <ul>{{ i }} - {{ result.method }}</ul>
-      <ul>{{ i }} - {{ result.ice }}</ul>
-      <ul>{{ i }} - {{ result.ingredients }}</ul>
-      <ul>{{ i }} - {{ result.garnish }}</ul>
-
-  </li>
+  <ul *ngFor="let result of myrecipes">
+      <li>{{ result.name }}</li>
+      <li>{{ result.glass }}</li>
+      <li>{{ result.method }}</li>
+      <li>{{ result.ice }}</li>
+      <li>{{ result.ingredients }}</li>
+      <li>{{ result.garnish }}</li>
+  </ul>
 
   <!-- <p> Here's the user object </p>
   <pre> {{ user | json }} </pre> -->

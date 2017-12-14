@@ -14,7 +14,8 @@ export class EditprofileComponent implements OnInit {
     email:"",
     city:"",
     style:"",
-    description:""
+    description:"",
+    img:""
   }
 
   constructor(
@@ -28,7 +29,6 @@ export class EditprofileComponent implements OnInit {
           this.user = user} );
   }
   editUser(){
-    console.log(this.user)
     this.userService.editUser(this.user)
        .subscribe(res =>{
          console.log(res);

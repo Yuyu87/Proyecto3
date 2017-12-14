@@ -14,5 +14,9 @@
         <label for="username">Description</label>
         <input type="text"[(ngModel)]="user.description"name="description" value="{{ user.description }}">
 
-       <button type="submit" (click)="editUser()"> Save profile</button>
+        <label for="img">Image</label>
+        <input type="text"[(ngModel)]="user.img"name="img" value="{{ user.img }}">
+       <button (click)="editUser()"> Save profile </button>
 </form>
+
+<img src="{{user.img}}">

@@ -3,13 +3,13 @@
 </p>
 
 <ul>
-    <li *ngFor="let result of listbt, let i = index">
-        <ul>{{ i }} - {{ result.username }}</ul>
-        <ul>{{ i }} - {{ result.email }}</ul>
-        <ul>{{ i }} - {{ result.city }}</ul>
-        <ul>{{ i }} - {{ result.style }}</ul>
-        <ul>{{ i }} - {{ result.description }}</ul>
+    <ul *ngFor="let result of listbt">
+        <ul>{{ result.username }}</ul>
+        <ul>{{ result.email }}</ul>
+        <ul>{{ result.city }}</ul>
+        <ul>{{ result.style }}</ul>
+        <ul>{{ result.description }}</ul>
         <button><a [routerLink]="['/btprofile',result._id]">Bartender Profile</a></button>
-    </li>
+    </ul>
 
 </ul>

@@ -35,6 +35,7 @@ router.post('/users',function(req, res) {
     city:req.body.city,
     style:req.body.style,
     description:req.body.description,
+    img:req.body.img
   });
 
   user.save()
@@ -44,7 +45,6 @@ router.post('/users',function(req, res) {
 
 /*Create a new bartender. Funciona*/
 router.post('/users/bartenders',function(req, res) {
-  console.log("entro al post")
   const user = new User({
     username: req.body.username,
     password: req.body.password,
@@ -52,7 +52,7 @@ router.post('/users/bartenders',function(req, res) {
     city: req.body.city,
     style:req.body.style,
     description:req.body.description,
-
+    img:req.body.img
   });
 
   user.save()
@@ -62,18 +62,14 @@ router.post('/users/bartenders',function(req, res) {
 
 router.post('/users/:id',(req, res) => {
   console.log(req.body)
-  const {username, email, city, style, description} = req.body;
-  const updates = {username, email,city,style,description};
+  const {username, email, city, style, description, img} = req.body;
+  const updates = {username, email,city,style,description,img};
   User.findByIdAndUpdate(req.params.id, updates)
     .then(user => res.status(200).json(user))
     .catch(err => res.status(500).json(err));
 });
 
-
-
-/* DELETE a User. */
 router.delete('/users/:id',(req, res) => {
-
   User.remove({_id: req.params.id})
     .then(o => res.status(200).json({message: 'Model has been removed!'}))
     .catch(e => res.status(500).json(e.message));

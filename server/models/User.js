@@ -8,7 +8,8 @@ const userSchema = new Schema({
   isBartender: { type:Boolean, default:false},
   city: { type: String},
   style: { type: String},
-  description: { type: String}
+  description: { type: String},
+  img: {type:String, default: 'https://www.timeshighereducation.com/sites/default/files/byline_photos/default-avatar.png' }
 }, {
   timestamps: {
     createdAt: 'created_at',
