@@ -27,11 +27,13 @@ authRoutes.post('/signup', (req, res, next) => {
       username,
       password: hashPass,
       city,
-      isBartender:req.body.isBartender || false,
+      isBartender:req.body.isBartender,
       style,
       description,
       email
     });
+    console.log(req.body);
+    console.log(theUser);
     return theUser.save()
     .then(user =>{
       req.login(user, (err) => {

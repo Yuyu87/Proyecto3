@@ -11,25 +11,32 @@ const BASEURL = `${DOMAIN}${PATH}`;
 
 @Injectable()
 export class RecipeService {
+    private options = {withCredentials:true};
+
   constructor(private http: Http) {}
 
   recipesList():Observable<any>{
-      return this.http.get(BASEURL+'/recipes')
+      return this.http.get(BASEURL+'/recipes', this.options)
+                      .map(res => res.json());
+  }
+
+  recipesListByBartender():Observable<any>{
+      return this.http.get(BASEURL+'/recipesbybartender', this.options)
                       .map(res => res.json());
   }
 
   recipeByID(id):Observable<any>{
-      return this.http.get(`${BASEURL}/recipes/${id}`)
+      return this.http.get(`${BASEURL}/recipes/${id}`, this.options)
                       .map(res => res.json());
   }
 
   createRecipe(e):Observable<any>{
-      return this.http.post(BASEURL+'/recipes', e)
+      return this.http.post(BASEURL+'/recipes', e, this.options)
                       .map(res => res.json());
   }
 
   deleteRecipe(id){
-      return this.http.delete(`${BASEURL+'/recipes'}/${id}`)
+      return this.http.delete(`${BASEURL+'/recipes'}/${id}`, this.options)
                       .map(res => res.json());
   }
 

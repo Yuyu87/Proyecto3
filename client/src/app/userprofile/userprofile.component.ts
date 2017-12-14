@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { NgModule }      from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+import { AppComponent }  from '../app.component';
+import { RecipeService }  from '../services/recipe.service';
 
 @Component({
   selector: 'app-userprofile',
@@ -8,13 +12,19 @@ import { AuthService } from '../services/auth.service';
 })
 export class UserprofileComponent implements OnInit {
   user:object;
-  constructor(public auth:AuthService) {
-    this.user = this.auth.getUser();
-    this.auth.getLoginEventEmitter()
-        .subscribe( user => this.user=user );
+  myrecipes:any;
+  constructor(public auth:AuthService, public recipeService:RecipeService) {
+
   }
 
   ngOnInit() {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user = user );
+
+    this.recipeService.recipesListByBartender()
+        .subscribe( myrecipes => this.myrecipes = myrecipes);
+
   }
 
 }

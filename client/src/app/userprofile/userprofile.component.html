@@ -4,9 +4,23 @@
 
 <div *ngIf="user">
   <h2> You are now logged in as {{ user.username }}!! </h2>
-  <p> Here's the user object </p>
-  <pre> {{ user | json }} </pre>
+  <ul>{{ i }} - {{ user.username }}</ul>
+  <ul>{{ i }} - {{ user.email }}</ul>
+
+  <li *ngFor="let result of myrecipes, let i = index">
+      <ul>{{ i }} - {{ result.name }}</ul>
+      <ul>{{ i }} - {{ result.glass }}</ul>
+      <ul>{{ i }} - {{ result.method }}</ul>
+      <ul>{{ i }} - {{ result.ice }}</ul>
+      <ul>{{ i }} - {{ result.ingredients }}</ul>
+      <ul>{{ i }} - {{ result.garnish }}</ul>
+
+  </li>
+
+  <!-- <p> Here's the user object </p>
+  <pre> {{ user | json }} </pre> -->
 
   <button (click)="auth.logout().subscribe()"> logout </button>
   <button><a [routerLink]="['/editprofile']">Edit my profile</a></button>
+  <button><a [routerLink]="['/recipesform']">Add new recipe!</a></button>
 </div>

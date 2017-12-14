@@ -9,18 +9,16 @@ import {EditprofileComponent} from './editprofile/editprofile.component';
 import {ListbtComponent} from './listbt/listbt.component';
 import {IndexComponent} from './index/index.component';
 import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
-import {EditbtprofileComponent} from './editbtprofile/editbtprofile.component';
-import {MybtprofileComponent} from './mybtprofile/mybtprofile.component';
+import {RecipesformComponent} from './recipesform/recipesform.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'userprofile',  component: UserprofileComponent,canActivate: [ IsLoggedInService ]  },
+    { path: 'userprofile',  component: UserprofileComponent  },
     { path: 'login',  component: LoginformComponent,  },
     { path: 'signup',  component: SignupformComponent,  },
     { path: 'btprofile/:id',  component: BtprofileComponent,  },
     { path: 'editprofile',  component: EditprofileComponent,  },
     { path: 'listbt',  component: ListbtComponent,  },
-    { path: 'editbtprofile',  component: EditbtprofileComponent,  },
-    { path: 'mybtprofile',  component: MybtprofileComponent,  },
+    { path: 'recipesform',  component: RecipesformComponent,  },
     { path: '**', redirectTo: '' }
 ];

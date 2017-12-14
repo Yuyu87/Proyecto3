@@ -11,6 +11,14 @@ router.get('/recipes', (req, res, next) => {
     .catch(e => res.status(500).json(e.message));
 });
 
+/* GET recipes listing. */
+router.get('/recipesbybartender', (req, res, next) => {
+  console.log("GET recipes by barteder");
+  Recipe.find({creator_id:req.user._id})
+    .then(recipesList => res.status(200).json(recipesList))
+    .catch(e => res.status(500).json(e.message));
+});
+
 
 /* GET a single Recipe. */
 router.get('/recipes/:id', (req, res) => {
@@ -21,7 +29,10 @@ router.get('/recipes/:id', (req, res) => {
 
 /* CREATE a new Recipe. */
 router.post('/recipes',function(req, res) {
-  console.log("entro al post")
+  console.log("entro al post");
+  console.log('==================');
+  console.log(req.user)
+
   const recipe = new Recipe({
     name: req.body.name,
     glass: req.body.glass,
@@ -29,7 +40,9 @@ router.post('/recipes',function(req, res) {
     ice: req.body.ice,
     ingredients: req.body.ingredients,
     garnish: req.body.garnish,
+    creator_id:req.user._id
 });
+  console.log(recipe);
 
 recipe.save()
   .then(result => res.status(200).json(result))

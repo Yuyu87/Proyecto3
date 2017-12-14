@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import {routes} from './routes';
+
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -12,10 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { ListbtComponent } from './listbt/listbt.component';
 import { LoginformComponent } from './loginform/loginform.component';
+import { RecipesformComponent } from './recipesform/recipesform.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-import { EditbtprofileComponent } from './editbtprofile/editbtprofile.component';
-import { MybtprofileComponent } from './mybtprofile/mybtprofile.component';
 
 import { AuthService } from './services/auth.service';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
@@ -24,6 +24,8 @@ import { ReviewService } from './services/review.service';
 import { ServiceBartenderService } from './services/serviceBartender.service';
 import { TicketService } from './services/ticket.service';
 import { UserService } from './services/user.service';
+
+
 
 
 
@@ -38,8 +40,7 @@ import { UserService } from './services/user.service';
     EditprofileComponent,
     ListbtComponent,
     IndexComponent,
-    EditbtprofileComponent,
-    MybtprofileComponent,
+    RecipesformComponent,
   ],
 
   imports: [

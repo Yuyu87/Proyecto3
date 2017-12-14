@@ -1,3 +1,18 @@
-<p>
-  editprofile works!
-</p>
+<form>
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="user.username"name="username" value="{{ user.username }}">
+
+        <label for="email">Email</label>
+        <input type="text"[(ngModel)]="user.email"name="email" value="{{ user.email }}">
+
+        <label for="username">City</label>
+        <input type="text"[(ngModel)]="user.city"name="city" value="{{ user.city }}">
+
+        <label for="username">Style</label>
+        <input type="text"[(ngModel)]="user.style"name="style" value="{{ user.style }}">
+
+        <label for="username">Description</label>
+        <input type="text"[(ngModel)]="user.description"name="description" value="{{ user.description }}">
+
+       <button type="submit" (click)="editUser()"> Save profile</button>
+</form>

@@ -31,6 +31,10 @@ router.post('/users',function(req, res) {
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
+    isBartender:req.body.isBartender,
+    city:req.body.city,
+    style:req.body.style,
+    description:req.body.description,
   });
 
   user.save()
@@ -56,14 +60,13 @@ router.post('/users/bartenders',function(req, res) {
     .catch(e => res.status(500).json(e.message));
 });
 
-/* EDIT a User || Bartender. */
 router.post('/users/:id',(req, res) => {
-  const {username, password, email,city,style,description} = req.body;
-  const updates = {username, password, email,city,style,description};
-
-  User.findByIdAndUpdate(req.params.id, updates, {new:true})
-    .then(p => res.status(200).json(p))
-    .catch(e => res.status(500).json(e.message));
+  console.log(req.body)
+  const {username, email, city, style, description} = req.body;
+  const updates = {username, email,city,style,description};
+  User.findByIdAndUpdate(req.params.id, updates)
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json(err));
 });
 
 

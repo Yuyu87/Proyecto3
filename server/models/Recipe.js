@@ -5,9 +5,10 @@ const recipeSchema = new Schema({
   name: { type: String},
   glass: { type: String},
   method: { type: String},
-  ice: {type: String, enum: ['Cubes', 'Crushed','Without']},
+  ice: {type: String },/*, enum: ['Cubes', 'Crushed','Without']},*/
   ingredients: { type: String},
-  garnish: { type: String}
+  garnish: { type: String},
+  creator_id: { type:Schema.Types.ObjectId, ref:'User'}
 }, {
   timestamps: {
     createdAt: 'created_at',
