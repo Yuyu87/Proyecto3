@@ -1,0 +1,15 @@
+.divCarousel{
+  height: 500px;
+  width: 80%;
+  margin:0 auto;
+}
+
+p{
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.steps{
+  height: 400px;
+}

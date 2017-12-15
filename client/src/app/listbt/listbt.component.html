@@ -1,15 +1,27 @@
-<p>
-  listbt works!
-</p>
 
 <ul>
+
     <ul *ngFor="let result of listbt">
-        <ul>{{ result.username }}</ul>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ result.name }}</h4>
+          <p class="card-text">
+            <li>Name: {{ result.name }}</li>
+            <li>Email: {{ result.email }}</li>
+            <li>City: {{ result.city }}</li>
+            <li>Style: {{ result.style }}</li>
+            <li>Description: {{ result.description }}</li>
+
+          </p>
+        </div>
+      </div>
+        <!-- <ul>{{ result.username }}</ul>
         <ul>{{ result.email }}</ul>
         <ul>{{ result.city }}</ul>
         <ul>{{ result.style }}</ul>
-        <ul>{{ result.description }}</ul>
-        <button><a [routerLink]="['/btprofile',result._id]">Bartender Profile</a></button>
+        <ul>{{ result.description }}</ul> -->
+
+        <button type="button" class="btn btn-primary" [routerLink]="['/btprofile',result._id]">Ver perfil de: {{ result.username }}</button>
     </ul>
 
 </ul>

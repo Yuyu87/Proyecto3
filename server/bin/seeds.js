@@ -8,7 +8,10 @@ const userData = [
 {username: 'Yurema',
 password: '1234',
 email: 'yuremarc@gmail.com',
-isBartender:false
+isBartender: true,
+city: 'Madrid',
+style: 'Modern',
+description: 'Me encantan los cocktails!!'
 // reviews: []
 },
 

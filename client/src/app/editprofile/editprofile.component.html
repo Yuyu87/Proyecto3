@@ -16,7 +16,7 @@
 
         <label for="img">Image</label>
         <input type="text"[(ngModel)]="user.img"name="img" value="{{ user.img }}">
-       <button (click)="editUser()"> Save profile </button>
+       <button (click)="editUser()" [routerLink]="['/userprofile']"> Save profile </button>
 </form>
 
 <img src="{{user.img}}">

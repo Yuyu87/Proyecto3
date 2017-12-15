@@ -1,26 +1,35 @@
+<style>@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');</style>
+
 <div *ngIf="!user">
   <h2>NO USER LOGGED IN</h2>
 </div>
 
-<img class = "imageUser"src="{{user.img}}">
+<img class="imageUser" src="{{user.img}}">
 <div *ngIf="user">
-  <h2> You are now logged in as {{ user.username }}!! </h2>
-  <!-- <li>{{ i }} - {{ user.username }}</li> -->
-  <!-- <li>{{ i }} - {{ user.email }}</li> -->
+  <h2><p> You are now logged in as {{ user.username }}!! </p></h2>
+
+
+  <button (click)="auth.logout().subscribe()" type="button" class="btn btn-secondary">Logout</button>
+  <button [routerLink]="['/editprofile']" type="button" class="btn btn-primary">Edit my profile</button>
+  <button [routerLink]="['/recipesform']" type="button" class="btn btn-primary">Add new recipe!</button>
 
   <ul *ngFor="let result of myrecipes">
-      <li>{{ result.name }}</li>
-      <li>{{ result.glass }}</li>
-      <li>{{ result.method }}</li>
-      <li>{{ result.ice }}</li>
-      <li>{{ result.ingredients }}</li>
-      <li>{{ result.garnish }}</li>
+
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title"><p class="cocktailtittle">{{ result.name }}</p></h4>
+        <p class="card-text">
+          <li>Glass: {{ result.glass }}</li>
+          <li>Method: {{ result.method }}</li>
+          <li>Ice: {{ result.ice }}</li>
+          <li>Ingredients: {{ result.ingredients }}</li>
+          <li>Garnish: {{ result.garnish }}</li>
+          <!-- poner aquí la imagen de cada cóctel <li>Garnish: {{ result.garnish }}</li> -->
+
+        </p>
+      </div>
+    </div>
+
   </ul>
 
-  <!-- <p> Here's the user object </p>
-  <pre> {{ user | json }} </pre> -->
-
-  <button (click)="auth.logout().subscribe()"> logout </button>
-  <button><a [routerLink]="['/editprofile']">Edit my profile</a></button>
-  <button><a [routerLink]="['/recipesform']">Add new recipe!</a></button>
 </div>

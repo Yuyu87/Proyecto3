@@ -4,3 +4,7 @@
 .navbar-brand {
   height: 80px;
 }
+
+.bg-light {
+    background-color: #DEDEDE!important;
+}
